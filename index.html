@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Intelligent Keyboard</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script type="text/javascript">
+    var count=0;
+
+      function t() {
+        // var count=0;
+        var data = document.getElementById('display').value;
+        alert(data);
+        var str = data.split(" ");
+        // var count = str.length;
+      var text = str[count];
+        alert(text);
+        count++;
+        var req = new XMLHttpRequest();
+        req.open("GET", "https://localhost/key1.php?text="+text, true)
+        req.send();
+
+
+        req.onreadyStatechange=function(){
+
+          if(req.readyState==4 && req.status==200)
+          {
+        //    document.text;
+          }
+
+
+        }
+
+      }
+
+    </script>
+  </head>
+  <body>
+    <nav>
+    <div class="nav-wrapper teal">
+      <span href="#" class="brand-logo center">Intelligent Keyboard</span>
+      </ul>
+    </div>
+  </nav>
+  <br>
+  <div class="container">
+    <div class="row center">
+      <div id="" class="input-field col s12 m12">
+        <br><br>
+        <input id="display" type="text" class="validate" style="width: 75%;">
+      </div>
+    </div>
+  </div>
+  <br><br><br>
+  <div class="container">
+    <div class="row">
+      <div class="col m12 s12 center">
+        <a class="waves-effect waves-light btn key-buttons" onclick="document.getElementById('display').value+='q' ">q</a>
+        <a class="waves-effect waves-light btn key-buttons" onclick="document.getElementById('display').value+='w' ">w</a>
+        <a class="waves-effect waves-light btn key-buttons" onclick="document.getElementById('display').value+='e' ">e</a>
+        <a class="waves-effect waves-light btn key-buttons" onclick="document.getElementById('display').value+='r' ">r</a>
+        <a class="waves-effect waves-light btn key-buttons" onclick="document.getElementById('display').value+='t' ">t</a>
+        <a class="waves-effect waves-light btn key-buttons" onclick="document.getElementById('display').value+='y' ">y</a>
+        <a class="waves-effect waves-light btn key-buttons" onclick="document.getElementById('display').value+='u' ">u</a>
+        <a class="waves-effect waves-light btn key-buttons" onclick="document.getElementById('display').value+='i' ">i</a>
+        <a class="waves-effect waves-light btn key-buttons" onclick="document.getElementById('display').value+='o' ">o</a>
+        <a class="waves-effect waves-light btn key-buttons" onclick="document.getElementById('display').value+='q' ">p</a>
+      </div>
+
+      <div class="col m12 center">
+        <a class="waves-effect waves-light btn key-buttons" onclick="document.getElementById('display').value+='a' ">a</a>
+        <a class="waves-effect waves-light btn key-buttons" onclick="document.getElementById('display').value+='s' ">s</a>
+        <a class="waves-effect waves-light btn key-buttons" onclick="document.getElementById('display').value+='d' ">d</a>
+        <a class="waves-effect waves-light btn key-buttons" onclick="document.getElementById('display').value+='f' ">f</a>
+        <a class="waves-effect waves-light btn key-buttons" onclick="document.getElementById('display').value+='g' ">g</a>
+        <a class="waves-effect waves-light btn key-buttons" onclick="document.getElementById('display').value+='h' ">h</a>
+        <a class="waves-effect waves-light btn key-buttons" onclick="document.getElementById('display').value+='j' ">j</a>
+        <a class="waves-effect waves-light btn key-buttons" onclick="document.getElementById('display').value+='k' ">k</a>
+        <a class="waves-effect waves-light btn key-buttons" onclick="document.getElementById('display').value+='l' " >l</a>
+      </div>
+
+      <div class="col m12 center">
+        <a class="waves-effect waves-light btn key-buttons" onclick="document.getElementById('display').value+='z' ">z</a>
+        <a class="waves-effect waves-light btn key-buttons" onclick="document.getElementById('display').value+='x' ">x</a>
+        <a class="waves-effect waves-light btn key-buttons" onclick="document.getElementById('display').value+='c' ">c</a>
+        <a class="waves-effect waves-light btn key-buttons" onclick="document.getElementById('display').value+='v' ">v</a>
+        <a class="waves-effect waves-light btn key-buttons" onclick="document.getElementById('display').value+='b' ">b</a>
+        <a class="waves-effect waves-light btn key-buttons" onclick="document.getElementById('display').value+='n' ">n</a>
+        <a class="waves-effect waves-light btn key-buttons" onclick="document.getElementById('display').value+='m' ">m</a>
+      </div>
+
+    <div class="row">
+      <div class="col m12 center">
+        <a id="call-btn" class="waves-effect waves-light btn" onclick="document.getElementById('display').value+=' '; t();"></a>
+      </div>
+
+    </div>
+  </div>
+  <div id="w1">
+
+  </div>
+
+  </body>
+</html>

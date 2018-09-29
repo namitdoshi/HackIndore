@@ -1,0 +1,11 @@
+.key-buttons {
+  padding-left: 35px;
+  padding-right: 35px;
+  font-size: 2em;
+  text-transform: lowercase;
+  margin-bottom: 5px;
+}
+
+#call-btn {
+  width: 45%;
+}
